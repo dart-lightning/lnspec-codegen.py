@@ -17,9 +17,11 @@ lnspec-gen.py is a code generator tool, and it is inspired by the tools provided
 to generate all the lightning specifications from a CSV file. This tool is an abstract of these tools provided to help the people to 
 avoid to start from scratch each time.
 
-What you are waiting for? Start to implement your code generator class for your favorite language. See [the discussion]() to see what language
+What you are waiting for? Start to implement your code generator class for your favorite language. See [the discussion](https://github.com/dart-lightning/lnspec-codegen.py/discussions/3) to see what language
 it is already taken and where, so you can help to develop it.
 
+This tool is full inspired by the [bolt12 library](https://github.com/rustyrussell/bolt12) implementation, 
+where the code generator it is used to generate js and python code.
 
 ## How to use it
 
