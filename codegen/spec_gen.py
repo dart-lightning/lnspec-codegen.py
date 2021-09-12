@@ -1,5 +1,3 @@
-
-
 def towire_tlv_payload_amt_to_forward(value):
     _n = 0
     buf = bytes()
@@ -72,10 +70,26 @@ def fromwire_tlv_payload_payment_data(buffer):
 
 
 tlv_tlv_payload = {
-    2: ("amt_to_forward", towire_tlv_payload_amt_to_forward, fromwire_tlv_payload_amt_to_forward),
-    4: ("outgoing_cltv_value", towire_tlv_payload_outgoing_cltv_value, fromwire_tlv_payload_outgoing_cltv_value),
-    6: ("short_channel_id", towire_tlv_payload_short_channel_id, fromwire_tlv_payload_short_channel_id),
-    8: ("payment_data", towire_tlv_payload_payment_data, fromwire_tlv_payload_payment_data),
+    2: (
+        "amt_to_forward",
+        towire_tlv_payload_amt_to_forward,
+        fromwire_tlv_payload_amt_to_forward,
+    ),
+    4: (
+        "outgoing_cltv_value",
+        towire_tlv_payload_outgoing_cltv_value,
+        fromwire_tlv_payload_outgoing_cltv_value,
+    ),
+    6: (
+        "short_channel_id",
+        towire_tlv_payload_short_channel_id,
+        fromwire_tlv_payload_short_channel_id,
+    ),
+    8: (
+        "payment_data",
+        towire_tlv_payload_payment_data,
+        fromwire_tlv_payload_payment_data,
+    ),
 }
 
 
@@ -396,15 +410,31 @@ tlv_offer = {
     8: ("amount", towire_offer_amount, fromwire_offer_amount),
     10: ("description", towire_offer_description, fromwire_offer_description),
     12: ("features", towire_offer_features, fromwire_offer_features),
-    14: ("absolute_expiry", towire_offer_absolute_expiry, fromwire_offer_absolute_expiry),
+    14: (
+        "absolute_expiry",
+        towire_offer_absolute_expiry,
+        fromwire_offer_absolute_expiry,
+    ),
     16: ("paths", towire_offer_paths, fromwire_offer_paths),
     20: ("vendor", towire_offer_vendor, fromwire_offer_vendor),
     22: ("quantity_min", towire_offer_quantity_min, fromwire_offer_quantity_min),
     24: ("quantity_max", towire_offer_quantity_max, fromwire_offer_quantity_max),
     26: ("recurrence", towire_offer_recurrence, fromwire_offer_recurrence),
-    64: ("recurrence_paywindow", towire_offer_recurrence_paywindow, fromwire_offer_recurrence_paywindow),
-    66: ("recurrence_limit", towire_offer_recurrence_limit, fromwire_offer_recurrence_limit),
-    28: ("recurrence_base", towire_offer_recurrence_base, fromwire_offer_recurrence_base),
+    64: (
+        "recurrence_paywindow",
+        towire_offer_recurrence_paywindow,
+        fromwire_offer_recurrence_paywindow,
+    ),
+    66: (
+        "recurrence_limit",
+        towire_offer_recurrence_limit,
+        fromwire_offer_recurrence_limit,
+    ),
+    28: (
+        "recurrence_base",
+        towire_offer_recurrence_base,
+        fromwire_offer_recurrence_base,
+    ),
     30: ("node_id", towire_offer_node_id, fromwire_offer_node_id),
     54: ("send_invoice", towire_offer_send_invoice, fromwire_offer_send_invoice),
     34: ("refund_for", towire_offer_refund_for, fromwire_offer_refund_for),
@@ -623,15 +653,51 @@ tlv_invoice_request = {
     2: ("chains", towire_invoice_request_chains, fromwire_invoice_request_chains),
     4: ("offer_id", towire_invoice_request_offer_id, fromwire_invoice_request_offer_id),
     8: ("amount", towire_invoice_request_amount, fromwire_invoice_request_amount),
-    12: ("features", towire_invoice_request_features, fromwire_invoice_request_features),
-    32: ("quantity", towire_invoice_request_quantity, fromwire_invoice_request_quantity),
-    36: ("recurrence_counter", towire_invoice_request_recurrence_counter, fromwire_invoice_request_recurrence_counter),
-    68: ("recurrence_start", towire_invoice_request_recurrence_start, fromwire_invoice_request_recurrence_start),
-    38: ("payer_key", towire_invoice_request_payer_key, fromwire_invoice_request_payer_key),
-    39: ("payer_note", towire_invoice_request_payer_note, fromwire_invoice_request_payer_note),
-    50: ("payer_info", towire_invoice_request_payer_info, fromwire_invoice_request_payer_info),
-    56: ("replace_invoice", towire_invoice_request_replace_invoice, fromwire_invoice_request_replace_invoice),
-    240: ("payer_signature", towire_invoice_request_payer_signature, fromwire_invoice_request_payer_signature),
+    12: (
+        "features",
+        towire_invoice_request_features,
+        fromwire_invoice_request_features,
+    ),
+    32: (
+        "quantity",
+        towire_invoice_request_quantity,
+        fromwire_invoice_request_quantity,
+    ),
+    36: (
+        "recurrence_counter",
+        towire_invoice_request_recurrence_counter,
+        fromwire_invoice_request_recurrence_counter,
+    ),
+    68: (
+        "recurrence_start",
+        towire_invoice_request_recurrence_start,
+        fromwire_invoice_request_recurrence_start,
+    ),
+    38: (
+        "payer_key",
+        towire_invoice_request_payer_key,
+        fromwire_invoice_request_payer_key,
+    ),
+    39: (
+        "payer_note",
+        towire_invoice_request_payer_note,
+        fromwire_invoice_request_payer_note,
+    ),
+    50: (
+        "payer_info",
+        towire_invoice_request_payer_info,
+        fromwire_invoice_request_payer_info,
+    ),
+    56: (
+        "replace_invoice",
+        towire_invoice_request_replace_invoice,
+        fromwire_invoice_request_replace_invoice,
+    ),
+    240: (
+        "payer_signature",
+        towire_invoice_request_payer_signature,
+        fromwire_invoice_request_payer_signature,
+    ),
 }
 
 
@@ -1107,25 +1173,53 @@ tlv_invoice = {
     12: ("features", towire_invoice_features, fromwire_invoice_features),
     16: ("paths", towire_invoice_paths, fromwire_invoice_paths),
     18: ("blindedpay", towire_invoice_blindedpay, fromwire_invoice_blindedpay),
-    19: ("blinded_capacities", towire_invoice_blinded_capacities, fromwire_invoice_blinded_capacities),
+    19: (
+        "blinded_capacities",
+        towire_invoice_blinded_capacities,
+        fromwire_invoice_blinded_capacities,
+    ),
     20: ("vendor", towire_invoice_vendor, fromwire_invoice_vendor),
     30: ("node_id", towire_invoice_node_id, fromwire_invoice_node_id),
     32: ("quantity", towire_invoice_quantity, fromwire_invoice_quantity),
     34: ("refund_for", towire_invoice_refund_for, fromwire_invoice_refund_for),
-    36: ("recurrence_counter", towire_invoice_recurrence_counter, fromwire_invoice_recurrence_counter),
+    36: (
+        "recurrence_counter",
+        towire_invoice_recurrence_counter,
+        fromwire_invoice_recurrence_counter,
+    ),
     54: ("send_invoice", towire_invoice_send_invoice, fromwire_invoice_send_invoice),
-    68: ("recurrence_start", towire_invoice_recurrence_start, fromwire_invoice_recurrence_start),
-    64: ("recurrence_basetime", towire_invoice_recurrence_basetime, fromwire_invoice_recurrence_basetime),
+    68: (
+        "recurrence_start",
+        towire_invoice_recurrence_start,
+        fromwire_invoice_recurrence_start,
+    ),
+    64: (
+        "recurrence_basetime",
+        towire_invoice_recurrence_basetime,
+        fromwire_invoice_recurrence_basetime,
+    ),
     38: ("payer_key", towire_invoice_payer_key, fromwire_invoice_payer_key),
     39: ("payer_note", towire_invoice_payer_note, fromwire_invoice_payer_note),
     50: ("payer_info", towire_invoice_payer_info, fromwire_invoice_payer_info),
     40: ("created_at", towire_invoice_created_at, fromwire_invoice_created_at),
     42: ("payment_hash", towire_invoice_payment_hash, fromwire_invoice_payment_hash),
-    44: ("relative_expiry", towire_invoice_relative_expiry, fromwire_invoice_relative_expiry),
+    44: (
+        "relative_expiry",
+        towire_invoice_relative_expiry,
+        fromwire_invoice_relative_expiry,
+    ),
     46: ("cltv", towire_invoice_cltv, fromwire_invoice_cltv),
     48: ("fallbacks", towire_invoice_fallbacks, fromwire_invoice_fallbacks),
-    52: ("refund_signature", towire_invoice_refund_signature, fromwire_invoice_refund_signature),
-    56: ("replace_invoice", towire_invoice_replace_invoice, fromwire_invoice_replace_invoice),
+    52: (
+        "refund_signature",
+        towire_invoice_refund_signature,
+        fromwire_invoice_refund_signature,
+    ),
+    56: (
+        "replace_invoice",
+        towire_invoice_replace_invoice,
+        fromwire_invoice_replace_invoice,
+    ),
     240: ("signature", towire_invoice_signature, fromwire_invoice_signature),
 }
 
@@ -1183,8 +1277,16 @@ def fromwire_invoice_error_error(buffer):
 
 
 tlv_invoice_error = {
-    1: ("erroneous_field", towire_invoice_error_erroneous_field, fromwire_invoice_error_erroneous_field),
-    3: ("suggested_value", towire_invoice_error_suggested_value, fromwire_invoice_error_suggested_value),
+    1: (
+        "erroneous_field",
+        towire_invoice_error_erroneous_field,
+        fromwire_invoice_error_erroneous_field,
+    ),
+    3: (
+        "suggested_value",
+        towire_invoice_error_suggested_value,
+        fromwire_invoice_error_suggested_value,
+    ),
     5: ("error", towire_invoice_error_error, fromwire_invoice_error_error),
 }
 

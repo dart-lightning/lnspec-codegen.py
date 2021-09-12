@@ -19,9 +19,9 @@ jobs:
         uses: abatilo/actions-poetry@v2.0.0
         with:
           poetry-version: ${{ matrix.poetry-version }}
-      - name: View poetry --help
+      - name: poery setup
         run: |
           poetry install
-          poetry run black .
-          poetry run python codegen.py -o codegen/spec_gen.py --language=py
-          poetry run python codegen.js -o codegen/spec_gen.js --language=js
+          poetry run black --check .
+          poetry run python codegen.py --language=py
+          poetry run python codegen.py --language=js

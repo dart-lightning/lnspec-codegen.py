@@ -5,7 +5,7 @@ description = "A lightning network spec generator is written in python as an exp
 authors = ["Vincenzo Palazzo <vincenzopalazzodev@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.6.2"
 pyln-proto = "^0.10.1"
 black = "^21.8b0"
 
