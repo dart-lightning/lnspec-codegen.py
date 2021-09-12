@@ -8,7 +8,7 @@ A [lightning network spec](https://github.com/lightningnetwork/lightning-rfc) ge
 - How use it
 - How to build
 - How to support new languages
-- Conclusion
+- Acknowledgment
 - License
 
 ## Introduction
@@ -40,9 +40,10 @@ After that you can use the make to perform the following operation:
 
 TODO see later
 
-## Conclusion
+## Acknowledgment
 
-Nothings to conclude here.
+This tools it is only a refactoring of the tool built from @rustyrussell and @adi2011 during summer 2021 under the repo [bolt12](https://github.com/rustyrussell/bolt12)
+I only take the code generated from them, and I used to isolate the language each other.
 
 ## License
 <div align="center">
